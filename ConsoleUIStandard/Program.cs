@@ -15,9 +15,17 @@ namespace ConsoleApp1
         {
             ProductManager productManager=new ProductManager(new EfProductDal());
 
-            foreach (var product in productManager.GetAll())
+            //foreach (var product in productManager.GetAll())
+            //{
+            //    Console.WriteLine(product.ProductName);
+            //}
+
+
+            OrderManager orderManager=new OrderManager(new EfOrderDal());  
+            
+            foreach(var order in orderManager.GetAll())
             {
-                Console.WriteLine(product.ProductName);
+                Console.WriteLine(order.CustomerId);
             }
         }
     }

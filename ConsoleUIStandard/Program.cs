@@ -14,13 +14,21 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+
+            //data transformation object 
+            //IoC
+
             //ProductTest();
 
             //OrderTest();
 
             //CategoryTest();
 
-            ProductDtoTest();
+            //ProductDtoTest();
+            OrderManager orderManager = new OrderManager(new EfOrderDal());
+            Order order = orderManager.Get(10248);
+            Console.WriteLine(order.CustomerId);
+
 
         }
 

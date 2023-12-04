@@ -20,6 +20,19 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
+        public void Add(Product product)
+        {
+           _productDal.Add(product);
+        }
+
+        public void Delete(Product product)
+        {
+            _productDal.Delete(product);
+        }
+        public void Update(Product product)
+        {
+           _productDal.Update(product);
+        }
         public List<Product> GetAll()
         {
             //iş kodları
@@ -40,6 +53,11 @@ namespace Business.Concrete
         public List<ProductDetailDto> GetProductDetails()
         {
            return _productDal.GetProductDetails();
+        }
+
+        public Product GetById(int productId)
+        {
+            return _productDal.Get(p=>p.ProductId == productId);
         }
     }
 }
